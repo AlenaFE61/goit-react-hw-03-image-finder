@@ -15,3 +15,5 @@ ImageGalleryItem.propTypes = {
   largeImageURL: PropTypes.string,
   openModal: PropTypes.func,
 };
+
+
