@@ -65,7 +65,7 @@ export class App extends Component {
 
   scrollOnMoreButton = () => {
     animateScroll.scrollToBottom({
-      duration: 1000,
+      duration: 300,
       delay: 10,
       smooth: 'linear',
     });
@@ -90,19 +90,21 @@ export class App extends Component {
       this.state;
     return (
       <>
+      {isLoading &&<Loader />}
+      
         <Searchbar onSubmit={this.formSubmit} />
 
-        {isLoading ? (
-          <Loader />
-        ) : (
+        {images.length > 0 ? (
           <ImageGallery images={images} openModal={this.openModal} />
-        )}
-
+          ) : (<p></p>
+          )}
         {loadMore && <Button onloadMore={this.onloadMore} page={page} />}
-
+        
         {showModal && (
-          <Modal largeImageURL={largeImageURL} onClose={this.closeModal} />
+          <Modal largeImageURL={largeImageURL} 
+          onClose={this.closeModal} />
         )}
+     
       </>
     );
   }
