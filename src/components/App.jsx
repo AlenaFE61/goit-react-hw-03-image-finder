@@ -91,7 +91,7 @@ export class App extends Component {
     return (
       <>
       {isLoading &&<Loader />}
-      
+
         <Searchbar onSubmit={this.formSubmit} />
 
         {images.length > 0 ? (
@@ -109,3 +109,4 @@ export class App extends Component {
     );
   }
 }
+
